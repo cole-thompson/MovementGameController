@@ -4,13 +4,14 @@ Interfaces a joystick, buttons, 9 DOF IMU, and an ESP8266 WiFi MCU dev board.</b
 Programmed with Arduino WiFi and I2C Libraries. </br>
 
 ## About
-This is a part of a final project for an Embedded Systems Design Lab. There were other parts to the project (a console and display that ran a 2P fighting game), but this is a part that I programmed, designed the circuit layout, and 3d printed parts for. </br>
-The directions on the movement gestures need some work, I'm hoping to come back to this project and maybe just use the Espressif ESP IDF. </br>
+This is a part of a final project design competition for an Embedded Systems Design Lab. There were other parts to the project, including a console and display that ran a 2P fighting game. This is one part, the game controller, that I programmed, designed the circuit layout, and 3d printed parts for. </br>
+The controller uses [Madgewick's IMU Algorithm](http://x-io.co.uk/open-source-imu-and-ahrs-algorithms/) to compute rotational quaternions from the IMU data, and does some simple vector rotation to determine direction of acceleration for the gestures that happened in between transmissions. The directions on the movement gestures need some work, I'm hoping to come back to this project and maybe just use the Espressif ESP IDF. </br>
 
 ## UDP Packet
 Sends a packet in this format over UDP every 20ms: </br>
 {D:idnum:q0,q1,q2,q3:x_gesture,y_gesture,z_gesture:y_rot:x_js,y_js:b_primary,b_js,b_3} </br>
-Uses [Madgewick's IMU Algorithm](http://x-io.co.uk/open-source-imu-and-ahrs-algorithms/) to compute quaternions from the IMU data, and does some simple vector rotations to determine direction of acceleration for the gestures that happened in between transmissions. </br>
+Controller id, rotational quaternions, gesture vectors, y rotation (this could have been computed from the quaternions, but y-rot was significant to the game), joystick data, button data. </br>
+
 
 ## Parts (links on the way)
 ESP8266 12E Makerfocus Dev Board</br>
