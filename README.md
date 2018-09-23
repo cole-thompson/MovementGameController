@@ -21,7 +21,7 @@ Small push button</br>
 Small ~500mAh PulsePak microusb battery pack </br> 
 
 ## Controller
-![Controller](img/controller.png "Controller")
+![Controller](img/controller.jpg "Controller")
 
 ## Circuit Diagram (better one on the way)
-![Circuit Drawings](img/circuit_drawings.png "Circuit Drawings")
+![Circuit Drawings](img/circuit_drawings.PNG "Circuit Drawings")
